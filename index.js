@@ -53,6 +53,17 @@ const showCards = (cards) => {
         cardContainer.appendChild(newDiv);
     }) 
 }
-
-
 loadCountry();
+
+
+
+const showAllDataTogether = () => {
+    document.getElementById("spinner").classList.remove("d-none");
+    const URL = "https://openapi.programming-hero.com/api/ai/tools";
+    fetch(URL)
+    .then((res) => res.json())
+    .then((data) => {
+    document.getElementById("spinner").classList.add("d-none");
+    showCards(data.data.tools);
+   });
+}
