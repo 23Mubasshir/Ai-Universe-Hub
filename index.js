@@ -84,43 +84,53 @@ const showCardDetails = (cardDetails1) => {
   DetailsContainer.innerHTML = `
 
   <div class="col-md-6">
-    <div class="card">
+    <div class="card mt-5 mb-5 ms-5 border-danger card-color rounded-4">
       <div class="card-body">
-        <h5 class="card-title">${cardDetails1.description}</h5>
+        <h4 class="card-title fw-bold pe-4 py-3 ps-3">${cardDetails1.description}</h4>
 
 
+
+        <div class = "mx-3">
         <div class="row d-flex justify-content-between">
-        <div class= "col">
-        <h5>${cardDetails1.pricing[0].price}</h5>
+
+        <div class= "col-4 text-center ">
+        <h5 class="text-green py-5 rounded-4">${cardDetails1.pricing[0].price}</h5>
         </div>
 
-        <div class= "col">
-        <h5>${cardDetails1.pricing[1].price}</h5>
+        <div class= "col-4 text-center ">
+        <h5 class="text-orange py-5 rounded-4 ">${cardDetails1.pricing[1].price}</h5> 
         </div>
 
-        <div class= "col">
-        <h5>${cardDetails1.pricing[2].price}</h5>
+        <div class= "col-4 text-center ">
+        <h5 class="text-red py-5 rounded-4">${cardDetails1.pricing[2].price}</h5>
         </div>
 
         </div>
-
-
-
-
-        <div class = "d-flex justify-content-between px-4">
-        <div>
-        <h4 class="card-title py-3 ">Features</h4>
-        <p class="card-text ">1. ${cardDetails1.features[1].feature_name} </p>
-        <p class="card-text ">2. ${cardDetails1.features[2].feature_name}</p>
-        <p  class="card-text ">3. ${cardDetails1.features[3].feature_name}</p>
         </div>
+
+
+
+
+        <div class = "d-flex justify-content-between pb-5 px-4">
 
         <div>
-        <h4 class="card-title py-3 ">Integrations</h4>
-        <p class="card-text ">1. ${cardDetails1.integrations[0]} </p>
-        <p class="card-text ">2. ${cardDetails1.integrations[1]}</p>
-        <p  class="card-text ">3. ${cardDetails1.integrations[2]}</p>
+        <h4 class="fw-bold card-title ps-2 pb-1">Features</h4>    
+        <ul>
+        <li class="card-text ">1. ${cardDetails1.features[1].feature_name} </li>
+        <li class="card-text ">2. ${cardDetails1.features[2].feature_name}</li>
+        <li  class="card-text ">3. ${cardDetails1.features[3].feature_name}</li>
+        </ul>
         </div>
+
+        <div>
+        <h4 class="fw-bold card-title ps-1 pb-2 ">Integrations</h4>
+        <ul>
+        <li class="card-text ">1. ${cardDetails1.integrations[0]} </li>
+        <li class="card-text ">2. ${cardDetails1.integrations[1]}</li>
+        <li  class="card-text ">3. ${cardDetails1.integrations[2]}</li>
+        </ul>
+        </div>
+
         </div>
 
       </div>
@@ -129,12 +139,12 @@ const showCardDetails = (cardDetails1) => {
 
 
   <div class="col-md-6">
-    <div class="card">
+    <div class="card mt-5 mb-5 me-5 rounded-4">
       <img class="card-img-top " src=" ${cardDetails1.image_link[0]}" class="card-img-top" alt="...">
 
       <div class="card-body">
-        <h5 class="card-title">${cardDetails1.input_output_examples[0].input}</h5>
-        <p class="card-text">${cardDetails1.input_output_examples[0].output}</p>
+        <h4 class="card-title fw-bold text-center p-3">${cardDetails1.input_output_examples[0].input}</h4>
+        <p class="card-text text-center pb-4">${cardDetails1.input_output_examples[0].output}</p>
       </div>
 
     </div>

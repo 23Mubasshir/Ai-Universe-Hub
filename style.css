@@ -16,3 +16,22 @@
 .btn-arrow{
     text-align: right;   
 }
+
+.card-color{
+    background-color: rgba(235, 87, 87, 0.05);;
+}
+
+.text-orange{
+    color: #F28927;
+    background-color: #FFFFFF;
+}
+
+.text-red{
+    color: #EB5757;
+    background-color: #FFFFFF;
+}
+
+.text-green{
+    color: #03A30A;
+    background-color: #FFFFFF;
+}
