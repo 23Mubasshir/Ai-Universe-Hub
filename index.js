@@ -1,4 +1,3 @@
-
 const loadCountry = () => {
     const URL = "https://openapi.programming-hero.com/api/ai/tools";
     fetch(URL)
@@ -12,7 +11,7 @@ const showCards = (cards) => {
     cardContainer.innerHTML="";
         
     cards.forEach((card) => {
-        console.log(card);
+        // console.log(card);
 
         const newDiv = document.createElement("div")
         newDiv.innerHTML=`
@@ -24,9 +23,9 @@ const showCards = (cards) => {
                 <div class="card-body ">
                   <h4 class="card-title py-3 ">Features</h4>
 
-                  <p class="card-text ">1.${card.features[0]}</p>
-                  <p class="card-text ">2.${card.features[1]}</p>
-                  <p class="card-text ">3.${card.features[2]}</p>
+                  <p class="card-text ">1. ${card.features[0] || " there is no data"}</p>
+                  <p class="card-text ">2. ${card.features[1]}</p>
+                  <p  class="card-text ">3. ${card.features[2] || "There is no data" }</p>
 
                   <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-1 border-bottom"></div>
                   
@@ -40,7 +39,7 @@ const showCards = (cards) => {
 
             
                   <div class="btn-arrow">
-                  <button type="button" class="btn btn-primary btn-floating btn-circle mb-2 me-2">
+                  <button data-bs-toggle="modal" data-bs-target="#staticBackdrop" onclick="fetchCardDetails('${card.id}')" type="button" class="btn btn-primary btn-floating btn-circle mb-2 me-2 ">
                   <i class="fa-solid fa-arrow-right"></i></i>
                   </button>
                   </div>
@@ -66,4 +65,18 @@ const showAllDataTogether = () => {
     document.getElementById("spinner").classList.add("d-none");
     showCards(data.data.tools);
    });
+}
+
+
+
+
+const fetchCardDetails = (id) => {
+    const URL = `https://openapi.programming-hero.com/api/ai/tool/${id}`;
+    fetch(URL)
+    .then((res) => res.json())
+    .then((data) => showCardDetails(data.data));
+}
+
+const showCardDetails = (cardDetails) => {
+ 
 }
