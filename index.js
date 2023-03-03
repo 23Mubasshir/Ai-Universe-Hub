@@ -88,6 +88,25 @@ const showCardDetails = (cardDetails1) => {
       <div class="card-body">
         <h5 class="card-title">${cardDetails1.description}</h5>
 
+
+        <div class="row d-flex justify-content-between">
+        <div class= "col">
+        <h5>${cardDetails1.pricing[0].price}</h5>
+        </div>
+
+        <div class= "col">
+        <h5>${cardDetails1.pricing[1].price}</h5>
+        </div>
+
+        <div class= "col">
+        <h5>${cardDetails1.pricing[2].price}</h5>
+        </div>
+
+        </div>
+
+
+
+
         <div class = "d-flex justify-content-between px-4">
         <div>
         <h4 class="card-title py-3 ">Features</h4>
@@ -98,9 +117,9 @@ const showCardDetails = (cardDetails1) => {
 
         <div>
         <h4 class="card-title py-3 ">Integrations</h4>
-        <p class="card-text ">1. ${cardDetails1.integrations[0].feature_name} </p>
-        <p class="card-text ">2. ${cardDetails1.integrations[1].feature_name}</p>
-        <p  class="card-text ">3. ${cardDetails1.integrations[2].feature_name}</p>
+        <p class="card-text ">1. ${cardDetails1.integrations[0]} </p>
+        <p class="card-text ">2. ${cardDetails1.integrations[1]}</p>
+        <p  class="card-text ">3. ${cardDetails1.integrations[2]}</p>
         </div>
         </div>
 
@@ -112,10 +131,12 @@ const showCardDetails = (cardDetails1) => {
   <div class="col-md-6">
     <div class="card">
       <img class="card-img-top " src=" ${cardDetails1.image_link[0]}" class="card-img-top" alt="...">
+
       <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+        <h5 class="card-title">${cardDetails1.input_output_examples[0].input}</h5>
+        <p class="card-text">${cardDetails1.input_output_examples[0].output}</p>
       </div>
+
     </div>
   </div>
   `
