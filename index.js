@@ -16,16 +16,21 @@ const showCards = (cards) => {
         const newDiv = document.createElement("div")
         newDiv.innerHTML=`
         <div class="col">
-            <div class="card h-100">
+            <div class="card h-100 rounded-4">
 
-                <img src="${card.image}" class="card-img-top " alt="...">
+                <img src="${card.image}" class="card-img-top rounded-4 " alt="...">
 
                 <div class="card-body ">
-                  <h4 class="card-title py-3 ">Features</h4>
+                  <h4 class="card-title p-3 ">Features</h4>
 
-                  <p class="card-text ">1. ${card.features[0] || " there is no data"}</p>
-                  <p class="card-text ">2. ${card.features[1]}</p>
-                  <p  class="card-text ">3. ${card.features[2] || "There is no data" }</p>
+                  <ol>
+                  <li id="li1" class="card-text ">${card.features[0] || " "}
+                  </li>
+                  <li id="li2" class="card-text ">${card.features[1]}</li>
+                  <li id="li3" class="card-text ">${card.features[2] || "" }</li>
+                  <li id="li4" class="card-text">
+                  ${card.features[3] || "" }</li>
+                  </ol>
 
                   <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-1 border-bottom"></div>
                   
@@ -116,18 +121,18 @@ const showCardDetails = (cardDetails1) => {
         <div>
         <h4 class="fw-bold card-title ps-2 pb-1">Features</h4>    
         <ul>
-        <li class="card-text ">1. ${cardDetails1.features[1].feature_name} </li>
-        <li class="card-text ">2. ${cardDetails1.features[2].feature_name}</li>
-        <li  class="card-text ">3. ${cardDetails1.features[3].feature_name}</li>
+        <li class="card-text "> ${cardDetails1.features[1].feature_name} </li>
+        <li class="card-text "> ${cardDetails1.features[2].feature_name}</li>
+        <li  class="card-text "> ${cardDetails1.features[3].feature_name}</li>
         </ul>
         </div>
 
         <div>
         <h4 class="fw-bold card-title ps-1 pb-2 ">Integrations</h4>
         <ul>
-        <li class="card-text ">1. ${cardDetails1.integrations[0]} </li>
-        <li class="card-text ">2. ${cardDetails1.integrations[1]}</li>
-        <li  class="card-text ">3. ${cardDetails1.integrations[2]}</li>
+        <li class="card-text "> ${cardDetails1.integrations[0]} </li>
+        <li class="card-text "> ${cardDetails1.integrations[1]}</li>
+        <li  class="card-text "> ${cardDetails1.integrations[2]}</li>
         </ul>
         </div>
 
