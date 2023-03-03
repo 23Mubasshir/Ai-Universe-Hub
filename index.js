@@ -77,6 +77,47 @@ const fetchCardDetails = (id) => {
     .then((data) => showCardDetails(data.data));
 }
 
-const showCardDetails = (cardDetails) => {
- 
+const showCardDetails = (cardDetails1) => {
+  console.log(cardDetails1); 
+  const DetailsContainer = document.getElementById("modal-body-cards");
+  DetailsContainer.innerHTML="";
+  DetailsContainer.innerHTML = `
+
+  <div class="col-md-6">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">${cardDetails1.description}</h5>
+
+        <div class = "d-flex justify-content-between px-4">
+        <div>
+        <h4 class="card-title py-3 ">Features</h4>
+        <p class="card-text ">1. ${cardDetails1.features[1].feature_name} </p>
+        <p class="card-text ">2. ${cardDetails1.features[2].feature_name}</p>
+        <p  class="card-text ">3. ${cardDetails1.features[3].feature_name}</p>
+        </div>
+
+        <div>
+        <h4 class="card-title py-3 ">Integrations</h4>
+        <p class="card-text ">1. ${cardDetails1.integrations[0].feature_name} </p>
+        <p class="card-text ">2. ${cardDetails1.integrations[1].feature_name}</p>
+        <p  class="card-text ">3. ${cardDetails1.integrations[2].feature_name}</p>
+        </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+  <div class="col-md-6">
+    <div class="card">
+      <img class="card-img-top " src=" ${cardDetails1.image_link[0]}" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+      </div>
+    </div>
+  </div>
+  `
+
 }
