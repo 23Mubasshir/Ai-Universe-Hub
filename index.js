@@ -1,6 +1,4 @@
 
-
-
 // ----- fetching data for home page cards-----
 const loadCards = () => {
     const URL = "https://openapi.programming-hero.com/api/ai/tools";
@@ -8,11 +6,10 @@ const loadCards = () => {
     .then((res) => res.json())
     .then((data) => showCards(data.data.tools.slice(0, 6)
         ));
-}
+};
 
 
 // ----- JS for Home Cards -----
-
 const showCards = (cards) => {
   // console.log(cards);
     const cardContainer = document.getElementById("card");
@@ -51,12 +48,11 @@ const showCards = (cards) => {
         `
         cardContainer.appendChild(newDiv);
     }) 
-}
+};
+
 
 // ----- function call -----
 loadCards();
-
-
 
 
 // ----- JS for Show all cards -----
@@ -69,7 +65,7 @@ const showAllDataTogether = () => {
     document.getElementById("spinner").classList.add("d-none");
     showCards(data.data.tools);
    });
-}
+};
 
 
 // ----- JS for short by date cards -----
@@ -79,11 +75,11 @@ const shortByDate = () => {
   .then((res) => res.json())
   .then((data) => {shortByDateFunction(data.data.tools);
  });
-}
+};
 
 const shortByDateFunction = (byDate) => {
   const arrayDate = byDate;
-  console.log(arrayDate);
+  // console.log(arrayDate);
 
   customSort = (a, b) => {
     const dateA = new Date(a.published_in);
@@ -93,10 +89,7 @@ const shortByDateFunction = (byDate) => {
     return 0;
   };
   showCards(arrayDate.sort(customSort));
-}
-
-
-
+};
 
 
 // ----- fetching data for modal card details-----
@@ -105,7 +98,8 @@ const fetchCardDetails = (id) => {
     fetch(URL)
     .then((res) => res.json())
     .then((data) => showCardDetails(data.data));
-}
+};
+
 
 // ----- JS for Modal Cards -----
 const showCardDetails = (cardDetails1) => {
@@ -168,5 +162,4 @@ const showCardDetails = (cardDetails1) => {
     </div>
   </div>
   `
-
-}
+};
