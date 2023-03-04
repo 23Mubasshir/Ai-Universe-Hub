@@ -155,6 +155,12 @@ const showCardDetails = (cardDetails1) => {
       <img class="card-img-top " src=" ${cardDetails1.image_link[0]}" class="card-img-top" alt="...">
 
       <div class="card-body">
+      <div id="hide" class="position-absolute top-0 end-0 m-3 bg-danger fw-bold text-white rounded-4">
+
+      ${cardDetails1.accuracy && cardDetails1.accuracy.score ? cardDetails1.accuracy.score * 100 + " % accuracy"  : "" }
+
+      </div>
+        
         <h4 class="card-title fw-bold text-center p-3">
         ${cardDetails1.input_output_examples && cardDetails1.input_output_examples[0].input ? cardDetails1.input_output_examples[0].input : "Can you give any example?" }</h4>
         <p class="card-text text-center pb-4">
