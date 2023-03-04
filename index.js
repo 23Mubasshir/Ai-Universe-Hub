@@ -21,16 +21,17 @@ const showCards = (cards) => {
                 <img src="${card.image}" class="card-img-top rounded-4 " alt="...">
 
                 <div class="card-body ">
-                  <h4 class="card-title p-3 ">Features</h4>
 
-                  <ol>
-                  <li id="li1" class="card-text ">${card.features[0] || " "}
-                  </li>
-                  <li id="li2" class="card-text ">${card.features[1]}</li>
-                  <li id="li3" class="card-text ">${card.features[2] || "" }</li>
-                  <li id="li4" class="card-text">
-                  ${card.features[3] || "" }</li>
-                  </ol>
+                  <div class="pt-3 ps-3">
+                  <h4 class="card-title ">Features</h4>
+                  <p id="li1" class="card-text ">${card.features[0] ? "1." + card.features[0] : "" }
+                  </p>
+                  <p id="li2" class="card-text ">${card.features[1] ? "2." + card.features[1] : "" }</p>
+                  <p id="li3" class="card-text ">${card.features[2] ? "3." + card.features[2] : "" }</p>
+                  <p  class="card-text">${card.features[3] ? "4." + card.features[3] : "" }</p>
+                  </div>
+                  
+
 
                   <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-1 border-bottom"></div>
                   
@@ -98,16 +99,18 @@ const showCardDetails = (cardDetails1) => {
         <div class = "mx-3">
         <div class="row d-flex justify-content-between">
 
+
         <div class= "col-4 text-center ">
-        <h5 class="text-green py-5 rounded-4">${cardDetails1.pricing[0].price}</h5>
+
+        <h5 class="text-green py-5 rounded-4">${cardDetails1.pricing ? cardDetails1.pricing[0].price + "  " + cardDetails1.pricing[0].plan : "Free of cost/ Basic"}</h5>
         </div>
 
         <div class= "col-4 text-center ">
-        <h5 class="text-orange py-5 rounded-4 ">${cardDetails1.pricing[1].price}</h5> 
+        <h5 class="text-orange py-5 rounded-4">${cardDetails1.pricing ? cardDetails1.pricing[1].price + "  " + cardDetails1.pricing[1].plan : "Free of cost/ Pro"}</h5> 
         </div>
 
         <div class= "col-4 text-center ">
-        <h5 class="text-red py-5 rounded-4">${cardDetails1.pricing[2].price}</h5>
+        <h5 class="text-red py-5 rounded-4">${cardDetails1.pricing ? cardDetails1.pricing[2].price + "  " + cardDetails1.pricing[2].plan : "Free of cost/ Enterprise"}</h5>
         </div>
 
         </div>
@@ -120,19 +123,22 @@ const showCardDetails = (cardDetails1) => {
 
         <div>
         <h4 class="fw-bold card-title ps-2 pb-1">Features</h4>    
-        <ul>
-        <li class="card-text "> ${cardDetails1.features[1].feature_name} </li>
-        <li class="card-text "> ${cardDetails1.features[2].feature_name}</li>
-        <li  class="card-text "> ${cardDetails1.features[3].feature_name}</li>
-        </ul>
+        <p class="card-text "> ${cardDetails1.features[1] ? "&#x2022 " + cardDetails1.features[1].feature_name : "No Data Found"} </p>
+        <p class="card-text "> ${cardDetails1.features[2] ? "&#x2022 " + cardDetails1.features[2].feature_name : ""}</p>
+        <p  class="card-text "> ${cardDetails1.features[3] ? "&#x2022 " + cardDetails1.features[3].feature_name : ""}</p>
+        <p  class="card-text "> ${cardDetails1.features[4] ? "&#x2022 " + cardDetails1.features[4].feature_name : ""}</p>
+        <p  class="card-text "> ${cardDetails1.features[5] ? "&#x2022 " + cardDetails1.features[5].feature_name : ""}</p>
+
         </div>
 
         <div>
         <h4 class="fw-bold card-title ps-1 pb-2 ">Integrations</h4>
-        <ul>
-        <li class="card-text "> ${cardDetails1.integrations[0]} </li>
-        <li class="card-text "> ${cardDetails1.integrations[1]}</li>
-        <li  class="card-text "> ${cardDetails1.integrations[2]}</li>
+        <p class="card-text "> ${cardDetails1.integrations && cardDetails1.integrations[0] ? "&#x2022 " + cardDetails1.integrations[0] : "No Data Found" } </p>
+        <p class="card-text "> ${cardDetails1.integrations && cardDetails1.integrations[1] ? "&#x2022 " + cardDetails1.integrations[1] : "" }</p>
+        <p  class="card-text "> ${cardDetails1.integrations && cardDetails1.integrations[2] ? "&#x2022 " + cardDetails1.integrations[2] : "" }</p>
+        <p  class="card-text "> ${cardDetails1.integrations && cardDetails1.integrations[3] ? "&#x2022 " + cardDetails1.integrations[3] : "" }</p>
+        <p  class="card-text "> ${cardDetails1.integrations && cardDetails1.integrations[4] ? "&#x2022 " + cardDetails1.integrations[4] : "" }</p>
+        <p  class="card-text "> ${cardDetails1.integrations && cardDetails1.integrations[5] ? "&#x2022 " + cardDetails1.integrations[5] : "" }</p>
         </ul>
         </div>
 
@@ -145,11 +151,14 @@ const showCardDetails = (cardDetails1) => {
 
   <div class="col-md-6">
     <div class="card mt-5 mb-5 me-5 rounded-4">
+
       <img class="card-img-top " src=" ${cardDetails1.image_link[0]}" class="card-img-top" alt="...">
 
       <div class="card-body">
-        <h4 class="card-title fw-bold text-center p-3">${cardDetails1.input_output_examples[0].input}</h4>
-        <p class="card-text text-center pb-4">${cardDetails1.input_output_examples[0].output}</p>
+        <h4 class="card-title fw-bold text-center p-3">
+        ${cardDetails1.input_output_examples && cardDetails1.input_output_examples[0].input ? cardDetails1.input_output_examples[0].input : "Can you give any example?" }</h4>
+        <p class="card-text text-center pb-4">
+        ${cardDetails1.input_output_examples && cardDetails1.input_output_examples[0].output ? cardDetails1.input_output_examples[0].output : "No! Not Yet! Take a break!!!"}</p>
       </div>
 
     </div>
@@ -157,3 +166,6 @@ const showCardDetails = (cardDetails1) => {
   `
 
 }
+
+
+
