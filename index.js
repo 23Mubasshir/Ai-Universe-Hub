@@ -59,7 +59,7 @@ loadCards();
 
 
 
-// ----- JS for Show all button -----
+// ----- JS for Show all cards -----
 const showAllDataTogether = () => {
     document.getElementById("spinner").classList.remove("d-none");
     const URL = "https://openapi.programming-hero.com/api/ai/tools";
@@ -70,6 +70,32 @@ const showAllDataTogether = () => {
     showCards(data.data.tools);
    });
 }
+
+
+// ----- JS for short by date cards -----
+const shortByDate = () => {
+  const URL = "https://openapi.programming-hero.com/api/ai/tools";
+  fetch(URL)
+  .then((res) => res.json())
+  .then((data) => {shortByDateFunction(data.data.tools);
+ });
+}
+
+const shortByDateFunction = (byDate) => {
+  const arrayDate = byDate;
+  console.log(arrayDate);
+
+  customSort = (a, b) => {
+    const dateA = new Date(a.published_in);
+    const dateB = new Date(b.published_in);
+    if (dateA < dateB) return 1;
+    else if (dateA > dateB) return -1;
+    return 0;
+  };
+  showCards(arrayDate.sort(customSort));
+}
+
+
 
 
 
