@@ -23,7 +23,7 @@ const showCards = (cards) => {
                 <div class="card-body ">
 
                   <div class="pt-3 ps-3">
-                  <h4 class="card-title ">Features</h4>
+                  <h4 class="card-title pb-2">Features</h4>
                   <p id="li1" class="card-text ">${card.features[0] ? "1." + card.features[0] : "" }
                   </p>
                   <p id="li2" class="card-text ">${card.features[1] ? "2." + card.features[1] : "" }</p>
@@ -90,7 +90,7 @@ const showCardDetails = (cardDetails1) => {
   DetailsContainer.innerHTML = `
 
   <div class="col-md-6">
-    <div class="card mt-5 mb-5 ms-5 border-danger card-color rounded-4">
+    <div class="card mt-md-5 mb-md-5 ms-md-5 border-danger card-color rounded-4">
       <div class="card-body">
         <h4 class="card-title fw-bold pe-4 py-3 ps-3">${cardDetails1.description}</h4>
 
@@ -122,7 +122,7 @@ const showCardDetails = (cardDetails1) => {
         <div class = "d-flex justify-content-between pb-5 px-4">
 
         <div>
-        <h4 class="fw-bold card-title ps-2 pb-1">Features</h4>    
+        <h4 class="fw-bold card-title ps-2 pb-2">Features</h4>    
         <p class="card-text "> ${cardDetails1.features[1] ? "&#x2022 " + cardDetails1.features[1].feature_name : "No Data Found"} </p>
         <p class="card-text "> ${cardDetails1.features[2] ? "&#x2022 " + cardDetails1.features[2].feature_name : ""}</p>
         <p  class="card-text "> ${cardDetails1.features[3] ? "&#x2022 " + cardDetails1.features[3].feature_name : ""}</p>
@@ -150,7 +150,7 @@ const showCardDetails = (cardDetails1) => {
 
 
   <div class="col-md-6">
-    <div class="card mt-5 mb-5 me-5 rounded-4">
+    <div class="card mt-md-5 mb-md-5 me-md-5 rounded-4">
 
       <img class="card-img-top " src=" ${cardDetails1.image_link[0]}" class="card-img-top" alt="...">
 
